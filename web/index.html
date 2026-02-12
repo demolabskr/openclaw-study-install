@@ -100,7 +100,7 @@
         <div id="authIntro" class="muted" style="margin-bottom:12px"></div>
 
         <div class="row" style="justify-content:space-between; gap:12px">
-          <div class="row" style="gap:8px; align-items:center">
+          <div class="row" style="gap:8px; align-items:center; display:none">
             <div id="langLabel" class="muted">언어</div>
             <button id="btnLangKo" style="padding:8px 10px">KO</button>
             <button id="btnLangEn" style="padding:8px 10px">EN</button>
@@ -175,7 +175,7 @@
   </div>
 
   <script>
-    // i18n (minimal, KO default / EN for non-Korean browsers)
+    // i18n (KO default)
     const I18N = {
       ko: {
         authTitle: '접속 인증 필요',
@@ -482,10 +482,7 @@
     };
 
     function detectLang() {
-      const saved = localStorage.getItem('autoclaw_lang');
-      if (saved === 'ko' || saved === 'en') return saved;
-      const nav = (navigator.language || '').toLowerCase();
-      return nav.startsWith('ko') ? 'ko' : 'en';
+      return 'ko';
     }
 
     let LANG = detectLang();

@@ -356,6 +356,7 @@ app.get("/api/progress", async (req, res) => {
   const providerOkPath = path.join(STATE_DIR, "provider_ok.json");
   const channelsOkPath = path.join(STATE_DIR, "channels_ok.json");
   const nodeOkPath = path.join(STATE_DIR, "node_ok.json");
+  const dashboardPublicOkPath = path.join(STATE_DIR, "dashboard_public_ok.json");
   const home = process.env.HOME || "";
   const openclawConfigPath = home ? path.join(home, ".openclaw", "openclaw.json") : "";
 
@@ -366,6 +367,7 @@ app.get("/api/progress", async (req, res) => {
     providerOk: fs.existsSync(providerOkPath),
     channelsOk: fs.existsSync(channelsOkPath),
     nodeOk: fs.existsSync(nodeOkPath),
+    dashboardPublicOk: fs.existsSync(dashboardPublicOkPath),
     taskStatus: fs.existsSync(taskStatusPath),
   };
 

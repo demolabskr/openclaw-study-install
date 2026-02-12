@@ -132,7 +132,7 @@ openclaw node restart
 openclaw node stop
 ```
 
-> 설치 마법사(7~10단계)에서 service install/start를 완료했다면, 이후에는 위 명령으로만 운영해도 됩니다.
+> 설치 마법사(7~11단계)에서 service install/start 및 대시보드 외부 접속 점검을 완료했다면, 이후에는 위 명령으로만 운영해도 됩니다.
 
 ### WSL 주의사항(중요)
 
@@ -229,7 +229,7 @@ openclaw-study-install/
 │  │  ├─ common.sh               # 공통 유틸(log/die/need_cmd) + shell i18n 로드
 │  │  └─ i18n.sh                 # AUTOCLAW_LANG/LANG 기반 터미널 언어 결정 + t()
 │  ├─ i18n/                      # shell 언어팩(ko/en)
-│  ├─ tasks/                     # 단계별 실행 스크립트(의미 기반 파일명)
+│  ├─ tasks/                     # 단계별 실행 스크립트(의미 기반 파일명, dashboard_public 포함)
 │  └─ state/                     # 런타임 상태(secrets/auth/flags/runs 로그)
 ├─ README.md
 └─ package.json

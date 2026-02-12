@@ -243,6 +243,8 @@
         step_channels_setup_desc: '입력한 텔레그램 토큰만 자동으로 설정한다(텔레그램은 allowFrom 필수).',
         step_start_node_name: '10. node 서비스',
         step_start_node_desc: 'node 서비스를 install/restart하고 nodes status로 확인한다.',
+        step_dashboard_public_name: '11. 대시보드 외부 접속',
+        step_dashboard_public_desc: 'VPS 주소 접속을 위해 8787 포트/바인드 상태를 점검한다. (bind=127.0.0.1이면 재실행 안내)',
         step_done_name: '설치 완료',
         step_done_desc: '설치가 완료되었으니, 텔레그램을 활용해 오픈클로와 대화하며 자유롭게 활용하세요.',
 
@@ -392,6 +394,8 @@
         step_channels_setup_desc: 'Configure Telegram channel settings (allowFrom required).',
         step_start_node_name: '10. Node service',
         step_start_node_desc: 'Install/restart node service and verify status.',
+        step_dashboard_public_name: '11. Dashboard public access',
+        step_dashboard_public_desc: 'Check port 8787 and bind status for VPS address access. (If bind=127.0.0.1, restart guidance is shown)',
         step_done_name: 'Installation complete',
         step_done_desc: 'Installation is complete. Use Telegram to chat with OpenClaw and explore freely.',
 
@@ -600,6 +604,7 @@
       { id:'provider_setup' },
       { id:'channels_setup' },
       { id:'start_node' },
+      { id:'dashboard_public' },
       { id:'done' },
     ];
 
@@ -727,6 +732,7 @@
       if (files.providerOk) done.add('provider_setup');
       if (files.channelsOk) done.add('channels_setup');
       if (files.nodeOk) done.add('start_node');
+      if (files.dashboardPublicOk || taskStatus['dashboard_public']?.status === 'ok') done.add('dashboard_public');
 
       // installation complete marker (UI only)
       const installComplete = (
@@ -738,7 +744,8 @@
         done.has('start_gateway') &&
         done.has('provider_setup') &&
         done.has('channels_setup') &&
-        done.has('start_node')
+        done.has('start_node') &&
+        done.has('dashboard_public')
       );
       if (installComplete) done.add('done');
 

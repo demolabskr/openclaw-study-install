@@ -14,6 +14,14 @@
 
 ---
 
+## 포크 안내
+
+- 이 저장소는 `my3rdstory/autoclaw-web`를 기반으로 포크한 저장소입니다.
+- 원본 저장소: https://github.com/my3rdstory/autoclaw-web
+- 현재 문서와 quickstart 기본 경로는 이 포크 저장소(`demolabskr/openclaw-study-install`) 기준으로 맞춰져 있습니다.
+
+---
+
 ## 준비물
 
 - Ubuntu 또는 Debian 환경 1개

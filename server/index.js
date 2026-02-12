@@ -688,9 +688,6 @@ app.listen(PORT, HOST, () => {
       "- nohup(백그라운드):",
       `  cd ${ROOT}`,
       `  nohup env AUTOCLAW_BIND=${HOST} AUTOCLAW_PORT=${PORT} node server/index.js > autoclaw.log 2>&1 &`,
-      "",
-      "자세한 내용은 GitHub README를 참고해 주세요:",
-      "https://github.com/demolabskr/openclaw-study-install",
       hr,
       "",
     ];

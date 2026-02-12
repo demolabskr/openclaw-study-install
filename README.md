@@ -28,14 +28,14 @@
 아래 한 줄을 **대상 환경 터미널에서** 실행하면 오토클로를 설치/실행합니다.
 
 ```bash
-curl -fsSL "https://raw.githubusercontent.com/my3rdstory/autoclaw-web/main/scripts/quickstart.sh?ts=$(date +%s)" | bash
+curl -fsSL "https://raw.githubusercontent.com/demolabskr/openclaw-study-install/main/scripts/quickstart.sh?ts=$(date +%s)" | bash
 ```
 
 quickstart가 하는 일
 - apt 업데이트 및 기본 패키지 설치(curl/git/ca-certificates)
 - Node.js LTS(NodeSource) 설치
 - pnpm 설치(corepack)
-- 레포 clone/pull(기본: `$HOME/autoclaw`, 필요 시 `AUTOCLAW_DIR`로 변경) + 의존성 설치
+- 레포 clone/pull(기본 저장소: `https://github.com/demolabskr/openclaw-study-install.git`, 기본 경로: `$HOME/autoclaw`, 필요 시 `AUTOCLAW_REPO`/`AUTOCLAW_DIR`로 변경) + 의존성 설치
 - 웹 대시보드 실행
 
 ---
@@ -106,7 +106,7 @@ wsl --shutdown
 
 ## 3) 설치 후 운영(오토클로 없이 OpenClaw만 실행)
 
-결론: 설치가 끝난 뒤에는 **오토클로(autoclaw-web) 자체는 필수가 아닙니다.** 오토클로는 설치/설정 마법사(UI)일 뿐이고, 실제로 동작하는 건 OpenClaw의 **gateway/node 서비스**입니다.
+결론: 설치가 끝난 뒤에는 **오토클로 대시보드 자체는 필수가 아닙니다.** 오토클로는 설치/설정 마법사(UI)일 뿐이고, 실제로 동작하는 건 OpenClaw의 **gateway/node 서비스**입니다.
 
 ### OpenClaw 실행/상태 확인
 
@@ -209,7 +209,7 @@ sudo npm rm -g openclaw || true
 ## 코드 구조(요약)
 
 ```
-autoclaw-web/
+openclaw-study-install/
 ├─ scripts/quickstart.sh          # curl | bash 부트스트랩 (WSL systemd 안내 포함)
 ├─ server/
 │  ├─ index.js                   # 웹서버 + API + 작업 실행 + SSE 로그
@@ -248,5 +248,5 @@ autoclaw-web/
 
 ## 참고 링크
 
-- GitHub: https://github.com/my3rdstory/autoclaw-web
+- GitHub: https://github.com/demolabskr/openclaw-study-install
 - OpenClaw Docs: https://docs.openclaw.ai

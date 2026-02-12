@@ -100,11 +100,11 @@ log "3) pnpm 설치(corepack)"
 sudo corepack enable || true
 sudo corepack prepare pnpm@latest --activate
 
-REPO="${AUTOCLAW_REPO:-https://github.com/my3rdstory/autoclaw-web.git}"
+REPO="${AUTOCLAW_REPO:-https://github.com/demolabskr/openclaw-study-install.git}"
 # Default install dir: user home (avoids permission issues on WSL/VPS). Override with AUTOCLAW_DIR.
 DIR="${AUTOCLAW_DIR:-$HOME/autoclaw}"
 
-log "4) autoclaw-web 코드 받기"
+log "4) autoclaw 코드 받기"
 log "   - repo: $REPO"
 log "   - dir : $DIR"
 
@@ -150,7 +150,7 @@ fi
 sudo chown -R "$OWNER_USER":"$OWNER_GROUP" "$DIR" || true
 sudo chmod -R u+rwX "$DIR" || true
 
-log "5) autoclaw-web 의존성 설치"
+log "5) autoclaw 의존성 설치"
 cd "$DIR"
 # prefer pnpm, fallback to npm
 if command -v pnpm >/dev/null 2>&1; then
